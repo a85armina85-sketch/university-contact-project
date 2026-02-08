@@ -1,0 +1,3 @@
+print("armin"
+      "")
+print("armin")

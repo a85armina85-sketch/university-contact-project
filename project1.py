@@ -1,20 +1,20 @@
 import math
 
-list_op = ['log', 'sin', 'cos', 'tan', 'fac', 'sqrt']
+list_op = ['log', 'sin', 'cos', 'tan', 'fac', 'sqrt', 'cot', 'prime', 'abs',]
 
 
 def calculator(num1, num2, op):
 
     match(op):
         case '+':
-            return f"sum={num1+num2}"
+            return num1+num2
         case '-':
             return num1-num2
         case '*':
             return num1*num2
         case '/':
             if (num2 == 0):
-                return "errro"
+                return "error"
             else:
                 return num1/num2
         case '//':
@@ -28,7 +28,7 @@ def calculator(num1, num2, op):
             if (num2 != 0):
                 return num1 % num2
             else:
-                return "errro"
+                return "error"
         case 'abs':
             return (abs(num1), abs(num2))
         case 'pow':

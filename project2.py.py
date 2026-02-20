@@ -3,16 +3,16 @@ from random import *
 
 def meno():
     print("----------------------------------meno--------------------------------")
-    print("1.asan")
-    print("2.motevased")
-    print("3.sakht")
+    print("1.easy")
+    print("2.Elementary")
+    print("3.hard")
     print("-"*80)
 
 
 def choose_level():
     while True:
         try:
-            level = int(input("enter level="))
+            level = int(input("enter level(1_3)="))
             return level
         except ValueError as v:
             print(f"error={v}")
@@ -30,7 +30,7 @@ def setting_level(level):
 def input_javab():
     while True:
         try:
-            javab = int(input("enter javab="))
+            javab = int(input("enter answer="))
             return javab
         except ValueError as v:
             print(f"error={v}")
@@ -48,18 +48,23 @@ def main():
         talash -= 1
         if javab == answer:
             print("wow")
+
             c = input("aya mikhoi adameh bdi?")
-            if c == 'g':
+
+            if c.lower() in ('g', 'y'):
                 answer = randint(1, max_number)
+                # این خط برای این است که تلاش ها بعد از برد ریست شود
+                talash = setting_level(level[1])
             else:
                 print("finish")
                 break
         elif (javab > answer):
             print("javab to maximum ast")
         elif (javab < answer):
-            print("javab to maximum ast")
+            print("javab to minimum ast")
         if talash > 0:
             print(f"talash baghy={talash}")
+    print("you lost")
     print(f"javabs to={list1}")
     print(f"javab man={answer}")
 

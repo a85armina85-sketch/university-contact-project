@@ -1,13 +1,13 @@
 list1 = []
 
 
-def meno():
-    print("--------meno-------------")
+def menu():
+    print("--------menu-------------")
     print("1.add item")
-    print("2.remov item")
+    print("2.remove item")
     print("3.show item")
     print("4.count item")
-    print("5.exite")
+    print("5.exit")
     print("6.sort items")
     print("7.clear items")
 
@@ -26,7 +26,7 @@ def add_item():
             break
 
 
-def remov_item():
+def remove_item():
     while True:
         try:
             name = input("enter name=")
@@ -35,6 +35,7 @@ def remov_item():
         if name in list1:
             list1.remove(name)
             print(f"{name} remov as list")
+            break
         else:
             print("no found")
             break
@@ -60,7 +61,7 @@ def clear_items():
 
 
 def main():
-    meno()
+    menu()
     while True:
         try:
 
@@ -71,13 +72,13 @@ def main():
         if num == 1:
             add_item()
         elif num == 2:
-            remov_item()
+            remove_item()
         elif num == 3:
             show_item()
         elif num == 4:
             count_item()
         elif num == 5:
-            print("by")
+            print("bye")
             break
         elif num == 6:
             sort_item()
